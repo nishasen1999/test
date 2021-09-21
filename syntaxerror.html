@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+try {
+  eval("alert('Hello)");
+}
+catch(err) {
+  document.getElementById("demo").innerHTML = err.name;
+}
+</script>
+
+</body>
+</html>
+
