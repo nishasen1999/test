@@ -1,0 +1,241 @@
+what is closure in java script?
+   answer:
+          a closure gives you access to an outer function scope from an inner function.  
+          In JavaScript, closures are created every time a function is created at function creation time.
+          init() is a local variable called name and  function is called displayName(). The displayName() the inner function defined inside init() available only within the body of the init(). 
+           the displayName() function has no local variables of its own. inner functions have access to the variables of outer functions.   displayName() can access the variable name declared in the parent function.
+           
+           example;
+                 function init() {
+                 var name = 'Mozilla';   ==> name is a local variable 
+                 function displayName()  ==> displayName() is the inner function
+                 { 
+                 alert(name);            ==> variable declared in the parent function
+                  }
+                 displayName();
+                 }
+               init();
+               
+display today date and time?
+  answer:
+        <!DOCTYPE html>
+        <html>
+        <body>
+        <h2> display date and time <h2>
+        <p id="dom"></p>
+        <script>
+        const d = new Date();
+        document.getElementById("dom").innerHTML = d;
+        </script>
+        </body>  
+        </html>
+        
+        
+ write an function to clone an array?
+   answer: clone using slice method,
+         <script>
+         const icecream= ["blackcurrent", "vanilla", "blueberry", "strawberry", "Mango"];
+         const chocolate = icecream.slice(3);
+         document.getElementById("demo").innerHTML = icecream + "<br><br>" + chocolate;
+         </script>
+         
+write an function to check javascript array is an function or not?
+    answer: 
+          var array = function(input) {
+          if (toString.call(input) === "[object Array]")
+          return true;
+          return false;   
+           };
+          console.log(is_array('w3resource'));
+          console.log(is_array([1, 2, 4, 0]));
+          
+sort the items in array?
+    answer: using numeric sort
+            <!DOCTYPE html>
+            <html>
+            <body> 
+            <h2>JavaScript Array Sort</h2>
+            <p id="demo"></p>
+            <script>
+            const marks = [40, 100, 1, 5, 25, 10];
+            document.getElementById("demo").innerHTML = marks;  
+            function myFunction() {
+            points.sort(function(a, b){return a - b});
+            document.getElementById("demo").innerHTML = marks;
+               }
+               </script>
+              </body>
+              </html>
+              
+write a java script program to find duplicate values of an array?
+     answer:
+            var x = [1, 2, 3, 4, 5, 6, 7]
+            var y = [2, 4, 6, 8, 10]
+            x.forEach( function (i) { 
+            if(y.indexOf(i) < 0) {
+            y.push(i);
+           }});
+           
+javascript program to join all elements to string?
+        answer:
+        <script> 
+        function func() { 
+        var a = [ 1, 2, 3, 4, 5, 6 ]; 
+        document.write(a.join()); 
+        }
+        func(); 
+        </script> 
+
+get first element of array?
+   answer:
+         <!DOCTYPE html>
+         <html>
+         <body>
+         <h2>JavaScript Arrays</h2>
+         <p id="demo"></p>
+         <script>
+         const numbers= ["one", "two", "three", "four"];
+         document.getElementById("demo").innerHTML = numbers[0];
+         </script>
+         </body>
+         </html>
+         
+remove specific elements from array?
+    answer:
+          <!DOCTYPE html>
+          <html>
+          <body>
+          <h2>JavaScript Array Methods</h2>
+          <p id="demo"></p>
+         <script>
+         const numbers= ["5", "1", "6", "7", "8"];
+         const remove = numbers.slice(1);
+         document.getElementById("demo").innerHTML = numbers + "<br><br>" + remove;
+        </script> 
+        </body> 
+        </html>
+         
+merge 2 array          
+     answer:<!DOCTYPE html>
+         <html>
+         <body>
+         <h2>merge 2 Array </h2>
+         <p id="demo"></p>
+         <script>
+         const array1 = ["1","2", "3"];
+         const array2 = ["2", "30", "1"];
+         const myarray = array1.concat(array2);
+        document.getElementById("demo").innerHTML = myarray;
+        </script>
+        </body>
+        </html>
+        
+union of two array?
+answer: function union(arra1, arra2) {
+  
+  if ((arra1 == null) || (arra2==null)) 
+    return void 0;
+  var obj = {};
+ for (var i = arra1.length-1; i >= 0; -- i)
+     obj[arra1[i]] = arra1[i];
+  for (var i = arra2.length-1; i >= 0; -- i)
+     obj[arra2[i]] = arra2[i];
+  var res = [];
+ 
+  for (var n in obj)
+  {
+     if (obj.hasOwnProperty(n)) 
+      res.push(obj[n]);
+  }
+     return res;
+}
+console.log(union([1, 2, 3], [100, 2, 1, 10]));
+
+output : (1,2,3,10,100)
+
+javascript program to compute sum of each individual index value?
+      answer:
+      function Arrays_sum(array1, array2) 
+{
+  var result = [];
+  var ctr = 0;
+  var x=0;
+if (array1.length === 0) 
+   return "array1 is empty";
+  if (array2.length === 0) 
+   return "array2 is empty";   
+while (ctr < array1.length && ctr < array2.length) 
+  {
+    result.push(array1[ctr] + array2[ctr]);
+    ctr++;
+  }
+   if (ctr === array1.length) 
+ {
+    for (x = ctr; x < array2.length; x++)   {
+      result.push(array2[x]);
+    }
+  } 
+  else
+  {
+  for (x = ctr; x < array1.length; x++) 
+    {
+      result.push(array1[x]);
+    }
+  }
+  return result;
+}
+
+console.log(Arrays_sum([1,0,2,3,4], [3,5,6,7,8,13]));
+ 
+ output:[4,5,8,10,12,13]
+ 
+ javascript program to sort following array of object bt title value?
+      answer:
+             var library = [ 
+            { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+            { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+            { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+           ];
+           function compare_to_sort(x,y) 
+           {
+           if (x.title < y.title)
+            return -1;
+           if (x.title > y.title)
+           return 1;
+           return 0;
+           }
+           console.log(library.sort(compare_to_sort));
+    output:
+         [{"author":"Suzanne Collins","title":"Mockingjay: The Final Book of The Hunger Games","libraryID":3245},{"author":"Bill Gates","title":"The Road Ahead","libraryID":1254},{"author":"Steve Jobs","title":"Walter Isaacson","libraryID":4264}]
+
+
+let arrayOfLetters = ['a','b','c','d','e','f'];
+const anotherArrayOfLetters = arrayOfLetters;
+arrayOfLetters = [];
+console.log(anotherArrayOfLetters);
+
+output is :101
+
+let arrayOfLetters = ['a','b','c','d','e','f'];
+const anotherArrayOfLetters = arrayOfLetters;
+arrayOfLetters = [];
+console.log(anotherArrayOfLetters);
+
+output:['a','b','c','d','e','f']
+     
+     
+     for (let i = 0; i < 5; i++) {
+  setTimeout(function() { console.log(i); }, i * 1000 );
+}
+
+output:
+       this will print 5 times from 0,1,2,3,4.
+       
+       
+       
+       
+      
+              
+                 
+ 
+               
